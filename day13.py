@@ -23,13 +23,12 @@ def solve(part2=False):
             people['me'][name] = 0
 
     max_change = 0
-    for a in itertools.permutations(people.keys(), len(people.keys())):
-        tmp = a + a + a
+    for seats in itertools.permutations(people.keys(), len(people.keys())):
         change = 0
         for i in range(len(people.keys())):
-            left = tmp[i + 3]
-            person = tmp[i + 4]
-            right = tmp[i + 5]
+            left = seats[(i - 1) % len(people.keys())]
+            person = seats[i]
+            right = seats[(i + 1) % len(people.keys())]
             change += people[person][left]
             change += people[person][right]
         max_change = max(change, max_change)
