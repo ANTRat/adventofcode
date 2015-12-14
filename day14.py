@@ -18,12 +18,7 @@ for line in data:
         speed = int(rg[1])
         dur = int(rg[2])
         wait = int(rg[3])
-        speeds = []
-        for a in range(dur):
-            speeds.append(speed)
-        for b in range(wait):
-            speeds.append(0)
-        reindeer[name] = speeds
+        reindeer[name] = [speed]*dur + [0]*wait
 
 for second in range(2503):
     for name, rd in reindeer.items():
