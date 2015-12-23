@@ -1,9 +1,9 @@
 input = open('day23.txt').read().strip().split('\n')
 
 
-def run(asm, day2=False):
+def run(asm, part2=False):
     reg = dict(a=0, b=0)
-    if day2:
+    if part2:
         reg['a'] = 1
     n = 0
     while True:
